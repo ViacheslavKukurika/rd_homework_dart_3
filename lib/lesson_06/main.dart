@@ -137,7 +137,7 @@ void ifElseExample() {
 // 📍 Умовні конструкції if-case (pattern matching)
 void ifCaseExample() {
   var data = [1, 2, 3];
-  
+
   // Перевірка типу та структури
   if (data case List<int> list when list.length > 2) {
     print('Список цілих чисел з більш ніж 2 елементами: $list');

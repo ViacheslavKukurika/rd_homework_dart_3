@@ -1,232 +1,379 @@
-// ignore_for_file: dead_code
+// ignore_for_file: dead_code, unreachable_from_main
 
 void main() {
-  // Математичні оператори
-  // mathOperatorsExample();
+  // Основи функцій
+  // functionBasicsExample();
 
-  // Оператори порівняння
-  // comparisonOperatorsExample();
+  // 1. Позиційні обов'язкові параметри
+  // positionalRequiredExample();
 
-  // Логічні оператори
-  // logicalOperatorsExample();
+  // 2. Іменовані обов'язкові параметри
+  // namedRequiredExample();
 
-  // Тернарний оператор
-  // ternaryOperatorExample();
+  // 3. Позиційні не обов'язкові параметри
+  // positionalOptionalExample();
 
-  // Оператори присвоєння
-  // assignmentOperatorsExample();
+  // 4. Іменовані не обов'язкові параметри
+  // namedOptionalExample();
 
-  // Умовні конструкції if-else
-  // ifElseExample();
+  // 5. Обов'язкові та не обов'язкові разом
+  // mixedParametersExample();
 
-  // Умовні конструкції if-case
-  // ifCaseExample();
+  // 6. Значення по дефолту
+  // defaultValuesExample();
 
-  // Конструкція switchStatement
-  // switchStatementExample();
+  // 7. Функції що повертають значення
+  // returnValuesExample();
 
-  // Конструкція switchExpression
-  // switchExpressionExample();
+  // 8. Стрілочні функції
+  // arrowFunctionsExample();
 
-  // Конструкція switch
-  // switchStatementExample();
+  // 9. Область видимості змінних
+  // scopeExample();
 
-  // Цикли for, while, do-while
-  // forLoopExample();
-  // whileLoopExample();
-  // doWhileLoopExample();
-
-  // Break, continue, return
-  // breakContinueReturnExample();
+  // 10. Коли що використовувати
+  // bestPracticesExample();
 }
 
-// 📍 Математичні оператори
-void mathOperatorsExample() {
-  int a = 10;
-  double b = 3.4;
-  print('Додавання: ${a + b}');
-  print('Віднімання: ${a - b}');
-  print('Множення: ${a * b}');
-  print('Ділення: ${a / b}');
-  print('Цілочисельне ділення: ${a ~/ b}');
-  print('Залишок від ділення: ${a % b}');
+// 📍 Основи функцій
+void functionBasicsExample() {
+  print('🔧 Основи функцій');
 
-  print('');
-  print('Оруглення математичне: ${b.round()}');
-  print('Оруглення вгору: ${b.ceil()}');
-  print('Оруглення вниз: ${b.floor()}');
-  print('Зручний вивід в консоль: ${b.toStringAsFixed(2)}');
+  // Функція без параметрів і без повернення
+  sayHello();
+
+  // Функція з параметром
+  sayHelloTo('Марія');
+
+  // Функція що повертає значення
+  final result = multiply(4, 5);
+  print('Результат множення: $result');
+
+  // Збереження функції в змінній
+  final greeting = getGreeting();
+  print(greeting);
 }
 
-// 📍 Оператори порівняння
-void comparisonOperatorsExample() {
-  int a = 10;
-  int b = 5;
-  print('a == b: ${a == b}');
-  print('a != b: ${a != b}');
-  print('a > b: ${a > b}');
-  print('a < b: ${a < b}');
-  print('a >= b: ${a >= b}');
-  print('a <= b: ${a <= b}');
+// Найпростіша функція
+void sayHello() {
+  print('Привіт!');
 }
 
-// 📍 Логічні оператори
-void logicalOperatorsExample() {
-  bool hasMembership = true;
-  bool hasGuestPass = false;
-  bool gymIsOpen = true;
-
-  bool canEnterGym = (hasMembership || hasGuestPass) && gymIsOpen;
-  bool needsToBuyMembership = !hasMembership && !hasGuestPass;
-  bool cannotVisitGym = !gymIsOpen;
-
-  print('Чи можу я зайти у спортзал? $canEnterGym');
-  print('Чи потрібно купити абонемент? $needsToBuyMembership');
-  print('Чи спортзал закритий? $cannotVisitGym');
+// Функція з одним параметром
+void sayHelloTo(String name) {
+  print('Привіт, $name!');
 }
 
-// 📍 Тернарний оператор
-void ternaryOperatorExample() {
-  bool isWeekend = false;
+// Функція що повертає значення
+int multiply(int a, int b) {
+  return a * b;
+}
 
-  // Звичайний if-else
-  String activity;
-  if (isWeekend) {
-    activity = 'Відпочиваю';
-  } else {
-    activity = 'Працюю';
+// Функція що повертає String
+String getGreeting() {
+  return 'Доброго дня!';
+}
+
+// 📍 1. Позиційні обов'язкові параметри
+void positionalRequiredExample() {
+  print("🔹 Позиційні обов'язкові параметри");
+  greetPositional('User', 'ранку');
+  calculateArea(5.0, 3.0);
+}
+
+void greetPositional(String name, String timeOfDay) {
+  print('Доброго $timeOfDay, $name!');
+}
+
+double calculateArea(double width, double height) {
+  final area = width * height;
+  print('Площа: $area');
+  return area;
+}
+
+// 📍 2. Іменовані обов'язкові параметри
+void namedRequiredExample() {
+  print("\n🔸 Іменовані обов'язкові параметри");
+  greetNamed(name: 'Olena', timeOfDay: 'дня');
+  createUser(name: 'Іван', email: 'ivan@example.com', age: 25);
+}
+
+void greetNamed({required String name, required String timeOfDay}) {
+  print('Доброго $timeOfDay, $name!');
+}
+
+void createUser({
+  required String name,
+  required String email,
+  required int age,
+}) {
+  print('Створено користувача: $name, $email, вік: $age');
+}
+
+// 📍 3. Позиційні не обов'язкові параметри
+void positionalOptionalExample() {
+  print('\n🔹 Позиційні опціональні параметри');
+  greetPositionalOptional('Марія');
+  greetPositionalOptional('Петро', 'вечора');
+  greetPositionalOptional();
+}
+
+void greetPositionalOptional([String? name, String? timeOfDay]) {
+  final finalName = name ?? 'друже';
+  final finalTime = timeOfDay ?? 'дня';
+  print('Доброго $finalTime, $finalName!');
+}
+
+// 📍 4. Іменовані не обов'язкові параметри
+void namedOptionalExample() {
+  print('\n🔸 Іменовані опціональні параметри');
+  greetNamedOptional(name: 'Анна');
+  greetNamedOptional(timeOfDay: 'ночі');
+  greetNamedOptional();
+}
+
+void greetNamedOptional({String? name, String? timeOfDay}) {
+  final finalName = name ?? 'друже';
+  final finalTime = timeOfDay ?? 'дня';
+  print('Доброго $finalTime, $finalName!');
+}
+
+// 📍 5. Обов'язкові та не обов'язкові разом
+void mixedParametersExample() {
+  print('\n🔄 Змішані параметри');
+
+  // Позиційні обов'язкові + позиційні опціональні
+  sendMessage('Привіт!', 'Олексій');
+  sendMessage('Як справи?', 'Марина', true);
+
+  // Позиційні обов'язкові + іменовані
+  bookTicket('Київ', 'Львів', priority: true, seatClass: 'business');
+  bookTicket('Одеса', 'Харків');
+}
+
+void sendMessage(String message, String recipient, [bool isUrgent = false]) {
+  final urgency = isUrgent ? '[ТЕРМІНОВО] ' : '';
+  print('$urgencyПовідомлення для $recipient: $message');
+}
+
+void bookTicket(
+  String from,
+  String to, {
+  bool priority = false,
+  String? seatClass,
+}) {
+  var ticket = 'Квиток: $from → $to';
+  if (priority) ticket += ' (пріоритет)';
+  if (seatClass != null) ticket += ' [$seatClass]';
+  print(ticket);
+}
+
+// 📍 6. Значення по дефолту
+void defaultValuesExample() {
+  print('\n⚙️ Значення по дефолту');
+
+  // Позиційні з дефолтом
+  printInfo('Тарас');
+  printInfo('Оксана', 28);
+  printInfo('Дмитро', 35, 'Київ');
+
+  // Іменовані з дефолтом
+  configureApp();
+  configureApp(theme: 'dark');
+  configureApp(theme: 'light', language: 'en', notifications: false);
+}
+
+void printInfo(String name, [int age = 18, String city = 'Невідомо']) {
+  print("Ім'я: $name, Вік: $age, Місто: $city");
+}
+
+void configureApp({
+  String theme = 'light',
+  String language = 'uk',
+  bool notifications = true,
+}) {
+  print('Налаштування: тема=$theme, мова=$language, сповіщення=$notifications');
+}
+
+// 📍 7. Функції що повертають значення
+void returnValuesExample() {
+  print('\n↩️ Функції що повертають значення');
+
+  // Різні типи повернення
+  final sum = addNumbers(10, 5);
+  print('Сума: $sum');
+
+  final fullName = createFullName('Іван', 'Петренко');
+  print("Повне ім'я: $fullName");
+
+  final isAdult = checkAge(20);
+  print('Повнолітній: $isAdult');
+
+  // Функція може повертати null
+  final findUserResult = findUser('admin');
+  print('Користувач: ${findUserResult ?? 'не знайдено'}');
+}
+
+int addNumbers(int a, int b) {
+  return a + b;
+}
+
+String createFullName(String firstName, String lastName) {
+  return '$firstName $lastName';
+}
+
+bool checkAge(int age) {
+  return age >= 18;
+}
+
+String? findUser(String username) {
+  if (username == 'admin') {
+    return 'Адміністратор';
   }
-  print('Що я роблю сьогодні (if-else)? $activity');
-
-  // Тернарний оператор
-  String activityTernary = isWeekend ? 'Відпочиваю' : 'Працюю';
-  print('Що я роблю сьогодні (тернарний оператор)? $activityTernary');
+  return null; // Користувач не знайдений
 }
 
-// 📍 Оператори присвоєння
-void assignmentOperatorsExample() {
-  int number = 10;
+// 📍 8. Стрілочні функції (короткий синтаксис)
+void arrowFunctionsExample() {
+  print('\n🏹 Стрілочні функції');
 
-  number += 5;
-  print('Після додавання: $number');
+  // Звичайні функції vs стрілочні
+  print('Квадрат 5: ${square(5)}');
+  print('Куб 3: ${cube(3)}');
+  print('Подвоєння 7: ${doubleValue(7)}');
 
-  number -= 3;
-  print('Після віднімання: $number');
-
-  number *= 2;
-  print('Після множення: $number');
-
-  number ~/= 5;
-  print('Після цілочисельного ділення: $number');
-
-  number %= 3;
-  print('Після знаходження залишку: $number');
+  // Використання в обчисленнях
+  final numbers = <int>[1, 2, 3, 4, 5];
+  final doubled = numbers.map(doubleValue).toList();
+  print('Подвоєні числа: $doubled');
 }
 
-// 📍 Умовні конструкції if-else
-void ifElseExample() {
-  int age = 18;
+// Звичайна функція
+int square(int x) {
+  return x * x;
+}
 
-  if (age >= 18) {
-    print('Повнолітній');
-  } else {
-    print('Неповнолітній');
+// Стрілочна функція (коротка форма)
+int cube(int x) => x * x * x;
+int doubleValue(int x) => x * 2;
+bool isEven(int x) => x % 2 == 0;
+String greet(String name) => 'Привіт, $name!';
+
+// 📍 9. Область видимості змінних
+void scopeExample() {
+  print('\n🔍 Область видимості змінних');
+
+  // Глобальна змінна (визначена поза функціями)
+  print('Глобальна змінна: $globalCounter');
+
+  // Локальна змінна функції
+  final localMessage = 'Це локальна змінна';
+  print(localMessage);
+
+  // Параметри функції також локальні
+  demonstrateScope('Тестове значення');
+
+  // Змінні в блоках {}
+  if (localMessage.isNotEmpty) {
+    final blockVariable = 'Змінна в блоці if';
+    print(blockVariable);
   }
+  // print(blockVariable); // Помилка! Змінна недоступна поза блоком
+
+  // Цикли також мають свою область видимості
+  for (var i = 0; i < 3; i++) {
+    final loopVariable = 'Ітерація $i';
+    print(loopVariable);
+  }
+  // print(i); // Помилка! i недоступна поза циклом
 }
 
-// 📍 Умовні конструкції if-case (pattern matching)
-void ifCaseExample() {
-  var data = [1, 2, 3];
+// Глобальна змінна (доступна всюди в файлі)
+int globalCounter = 42;
 
-  // Перевірка типу та структури
-  if (data case List<int> list when list.length > 2) {
-    print('Список цілих чисел з більш ніж 2 елементами: $list');
-  }
+void demonstrateScope(String parameter) {
+  // parameter доступний тільки в цій функції
+  final localVar = 'Локальна змінна функції';
 
-  // Перевірка конкретних значень
-  var point = (x: 5, y: 10);
-  if (point case (x: var x, y: var y) when x > 0 && y > 0) {
-    print('Точка в першому квадранті: ($x, $y)');
-  }
+  print('Параметр: $parameter');
+  print('Локальна: $localVar');
+  print('Глобальна: $globalCounter');
 
-  // Перевірка з деструктуризацією
-  var user = {'name': 'Олексій', 'age': 25};
-  if (user case {'name': String name, 'age': int age} when age >= 18) {
-    print('Користувач $name є повнолітнім (вік: $age)');
-  }
+  // Можемо змінювати глобальну змінну
+  globalCounter++;
 }
 
-// 📍 Конструкція switch Statement
-void switchStatementExample() {
-  String day = 'середа';
+// 📍 10. Коли що використовувати - приклади
+void bestPracticesExample() {
+  print('\n📋 Найкращі практики');
 
-  switch (day) {
-    case 'понеділок':
-      print('Початок тижня');
-    case 'пʼятниця':
-      print('Кінець робочого тижня');
-    case 'субота':
-    case 'неділя':
-      print('Вихідний');
-    default:
-      print('Звичайний робочий день');
+  // Позиційні - для простих, очевидних параметрів
+  print('Математичні операції:');
+  print('Сума: ${add(5, 3)}');
+  print('Різниця: ${subtract(10, 4)}');
+
+  // Іменовані - для складних конфігурацій
+  print('\nНалаштування користувача:');
+  setupUser(
+    name: 'Володимир',
+    email: 'volodymyr@example.com',
+    isAdmin: true,
+    department: 'IT',
+  );
+
+  // Змішані - гнучкість + зрозумілість
+  print('\nЛогування:');
+  log('Система запущена');
+  log('Помилка підключення', level: 'ERROR');
+  log('Дебаг інформація', level: 'DEBUG', timestamp: true);
+}
+
+// Прості математичні функції - позиційні параметри
+int add(int a, int b) => a + b;
+int subtract(int a, int b) => a - b;
+
+// Складна конфігурація - іменовані параметри
+void setupUser({
+  required String name,
+  required String email,
+  bool isAdmin = false,
+  String? department,
+}) {
+  print('Користувач: $name ($email)');
+  if (isAdmin) print('Права: Адміністратор');
+  if (department != null) print('Відділ: $department');
+}
+
+// Гнучке логування - змішані параметри
+void log(String message, {String level = 'INFO', bool timestamp = false}) {
+  var output = '[$level] $message';
+  if (timestamp) {
+    output = '[${DateTime.now()}] $output';
   }
+  print(output);
 }
 
-// 📍 Конструкція switch expression
-void switchExpressionExample() {
-  String day = 'понеділок';
+/*
+📚 ПІДСУМОК:
 
-  final willGoToWork = switch (day) {
-    'субота' || 'неділя' => false,
-    _ => true,
-  };
+1. ФУНКЦІЇ - це блоки коду, які можна викликати багато разів
+2. ПАРАМЕТРИ - дані, які ми передаємо в функцію
+3. ПОВЕРНЕННЯ - результат, який функція дає назад
 
-  if (willGoToWork) {
-    print('Сьогодні піду на роботу');
-  } else {
-    print('Сьогодні не піду на роботу');
-  }
-}
+ТИПИ ПАРАМЕТРІВ:
+- Позиційні обов'язкові: func(a, b) - порядок важливий
+- Іменовані обов'язкові: func({required a, required b}) - порядок не важливий
+- Опціональні: можуть бути пропущені
+- З дефолтом: мають значення за замовчуванням
 
-// 📍 Цикл for
-void forLoopExample() {
-  for (int i = 0; i < 5; i++) {
-    print('Індекс: $i');
-  }
-}
+КОЛИ ЩО ВИКОРИСТОВУВАТИ:
+- 1-3 простих параметри → позиційні
+- Багато параметрів або складна логіка → іменовані
+- Стрілочні функції → для простих обчислень в один рядок
+- Звичайні функції → для складної логіки
 
-// 📍 Цикл while
-void whileLoopExample() {
-  int counter = 0;
-  while (counter < 3) {
-    print('Лічильник: $counter');
-    counter++;
-  }
-}
-
-// 📍 Цикл do-while
-void doWhileLoopExample() {
-  int number = 5;
-  do {
-    print('Число: $number');
-    number--;
-  } while (number > 0);
-}
-
-// 📍 Break, continue, return
-void breakContinueReturnExample() {
-  for (int i = 0; i < 5; i++) {
-    if (i == 2) {
-      continue;
-    }
-    if (i == 4) {
-      print('Досягнуто межі, вихід.');
-      break;
-    }
-    print('Поточне значення: $i');
-  }
-
-  print('Завершення функції.');
-  return;
-}
+ОБЛАСТЬ ВИДИМОСТІ:
+- Змінні існують тільки там, де вони визначені
+- Параметри функції - локальні для цієї функції
+- Глобальні змінні доступні всюди (але краще уникати)
+*/

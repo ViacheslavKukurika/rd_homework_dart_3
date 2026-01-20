@@ -1,3 +1,6 @@
+// Треба розказати студентам, що це за ignore  і для чого він використовується
+// ignore_for_file: prefer_final_locals, omit_local_variable_types
+
 // Оголошення та ініціалізація змінних у Dart
 
 void main() {

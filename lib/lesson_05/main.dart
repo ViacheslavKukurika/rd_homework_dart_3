@@ -1,46 +1,233 @@
-// Основні типи даних у Dart
-// Приклади оголошення змінних усіх базових типів
+// ignore_for_file: dead_code
 
 void main() {
-  // int — цілі числа
-  int age = 30;
-  print('int: $age');
+  // Математичні оператори
+  // mathOperatorsExample();
 
-  // double — числа з плаваючою комою
-  double height = 1.85;
-  print('double: $height');
+  // Оператори порівняння
+  // comparisonOperatorsExample();
 
-  // String — текстові рядки
-  String name = 'John Doe';
-  print('String: $name');
+  // Логічні оператори
+  // logicalOperatorsExample();
 
-  // bool — логічні значення
-  bool isActive = true;
-  print('bool: $isActive');
+  // Тернарний оператор
+  // ternaryOperatorExample();
 
-  // List — список елементів (може містити дублікати)
-  List<String> colors = ['red', 'green', 'blue'];
-  print('List: $colors');
+  // Оператори присвоєння
+  // assignmentOperatorsExample();
 
-  // Set — множина унікальних елементів (дублікати автоматично видаляються)
-  Set<int> uniqueNumbers = {1, 2, 3, 2, 1};
-  print('Set: $uniqueNumbers');
+  // Умовні конструкції if-else
+  // ifElseExample();
 
-  // Map — колекція пар "ключ-значення"
-  Map<String, int> productPrices = {
-    'apple': 3,
-    'banana': 2,
-    'orange': 4,
+  // Умовні конструкції if-case
+  // ifCaseExample();
+
+  // Конструкція switchStatement
+  // switchStatementExample();
+
+  // Конструкція switchExpression
+  // switchExpressionExample();
+
+  // Конструкція switch
+  // switchStatementExample();
+
+  // Цикли for, while, do-while
+  // forLoopExample();
+  // whileLoopExample();
+  // doWhileLoopExample();
+
+  // Break, continue, return
+  // breakContinueReturnExample();
+}
+
+// 📍 Математичні оператори
+void mathOperatorsExample() {
+  final a = 10;
+  final b = 3.4;
+  print('Додавання: ${a + b}');
+  print('Віднімання: ${a - b}');
+  print('Множення: ${a * b}');
+  print('Ділення: ${a / b}');
+  print('Цілочисельне ділення: ${a ~/ b}');
+  print('Залишок від ділення: ${a % b}');
+
+  print('');
+  print('Оруглення математичне: ${b.round()}');
+  print('Оруглення вгору: ${b.ceil()}');
+  print('Оруглення вниз: ${b.floor()}');
+  print('Зручний вивід в консоль: ${b.toStringAsFixed(2)}');
+}
+
+// 📍 Оператори порівняння
+void comparisonOperatorsExample() {
+  final a = 10;
+  final b = 5;
+  print('a == b: ${a == b}');
+  print('a != b: ${a != b}');
+  print('a > b: ${a > b}');
+  print('a < b: ${a < b}');
+  print('a >= b: ${a >= b}');
+  print('a <= b: ${a <= b}');
+}
+
+// 📍 Логічні оператори
+void logicalOperatorsExample() {
+  final hasMembership = true;
+  final hasGuestPass = false;
+  final gymIsOpen = true;
+
+  final canEnterGym = (hasMembership || hasGuestPass) && gymIsOpen;
+  final needsToBuyMembership = !hasMembership && !hasGuestPass;
+  final cannotVisitGym = !gymIsOpen;
+
+  print('Чи можу я зайти у спортзал? $canEnterGym');
+  print('Чи потрібно купити абонемент? $needsToBuyMembership');
+  print('Чи спортзал закритий? $cannotVisitGym');
+}
+
+// 📍 Тернарний оператор
+void ternaryOperatorExample() {
+  final isWeekend = false;
+
+  // Звичайний if-else
+  String activity;
+  if (isWeekend) {
+    activity = 'Відпочиваю';
+  } else {
+    activity = 'Працюю';
+  }
+  print('Що я роблю сьогодні (if-else)? $activity');
+
+  // Тернарний оператор
+  final activityTernary = isWeekend ? 'Відпочиваю' : 'Працюю';
+  print('Що я роблю сьогодні (тернарний оператор)? $activityTernary');
+}
+
+// 📍 Оператори присвоєння
+void assignmentOperatorsExample() {
+  var number = 10;
+
+  number += 5;
+  print('Після додавання: $number');
+
+  number -= 3;
+  print('Після віднімання: $number');
+
+  number *= 2;
+  print('Після множення: $number');
+
+  number ~/= 5;
+  print('Після цілочисельного ділення: $number');
+
+  number %= 3;
+  print('Після знаходження залишку: $number');
+}
+
+// 📍 Умовні конструкції if-else
+void ifElseExample() {
+  final age = 18;
+
+  if (age >= 18) {
+    print('Повнолітній');
+  } else {
+    print('Неповнолітній');
+  }
+}
+
+// 📍 Умовні конструкції if-case (pattern matching)
+void ifCaseExample() {
+  final data = [1, 2, 3];
+
+  // Перевірка типу та структури
+  if (data case final List<int> list when list.length > 2) {
+    print('Список цілих чисел з більш ніж 2 елементами: $list');
+  }
+
+  // Перевірка конкретних значень
+  final point = (x: 5, y: 10);
+  if (point case (x: final x, y: final y) when x > 0 && y > 0) {
+    print('Точка в першому квадранті: ($x, $y)');
+  }
+
+  // Перевірка з деструктуризацією
+  final user = {'name': 'Олексій', 'age': 25};
+  if (user case {'name': final String name, 'age': final int age}
+      when age >= 18) {
+    print('Користувач $name є повнолітнім (вік: $age)');
+  }
+}
+
+// 📍 Конструкція switch Statement
+void switchStatementExample() {
+  final day = 'середа';
+
+  switch (day) {
+    case 'понеділок':
+      print('Початок тижня');
+    case 'пʼятниця':
+      print('Кінець робочого тижня');
+    case 'субота':
+    case 'неділя':
+      print('Вихідний');
+    default:
+      print('Звичайний робочий день');
+  }
+}
+
+// 📍 Конструкція switch expression
+void switchExpressionExample() {
+  final day = 'понеділок';
+
+  final willGoToWork = switch (day) {
+    'субота' || 'неділя' => false,
+    _ => true,
   };
-  print('Map: $productPrices');
 
-  // dynamic — змінна, яка може змінювати свій тип під час виконання
-  dynamic anything = 'I am a String';
-  print('dynamic: $anything');
-  anything = 123; // тепер int
-  print('dynamic changed: $anything');
+  if (willGoToWork) {
+    print('Сьогодні піду на роботу');
+  } else {
+    print('Сьогодні не піду на роботу');
+  }
+}
 
-  // var — автоматичне визначення типу змінної за початковим значенням
-  var country = 'Ukraine'; // Dart сам визначить, що це String
-  print('var: $country');
+// 📍 Цикл for
+void forLoopExample() {
+  for (var i = 0; i < 5; i++) {
+    print('Індекс: $i');
+  }
+}
+
+// 📍 Цикл while
+void whileLoopExample() {
+  var counter = 0;
+  while (counter < 3) {
+    print('Лічильник: $counter');
+    counter++;
+  }
+}
+
+// 📍 Цикл do-while
+void doWhileLoopExample() {
+  var number = 5;
+  do {
+    print('Число: $number');
+    number--;
+  } while (number > 0);
+}
+
+// 📍 Break, continue, return
+void breakContinueReturnExample() {
+  for (var i = 0; i < 5; i++) {
+    if (i == 2) {
+      continue;
+    }
+    if (i == 4) {
+      print('Досягнуто межі, вихід.');
+      break;
+    }
+    print('Поточне значення: $i');
+  }
+
+  print('Завершення функції.');
+  return;
 }

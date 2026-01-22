@@ -6,6 +6,7 @@ analyzer:
     strict-inference: true
     strict-raw-types: true
   errors:
+    file_names: ignore
     inference_failure_on_collection_literal: ignore
     invalid_annotation_target: ignore
     missing_required_param: error

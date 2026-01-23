@@ -1,18 +1,15 @@
-// 📍 Логічні оператори
-void logicalOperatorsExample() {
+// ignore_for_file: dead_code
+
+void main() {
   final hasMembership = true;
   final hasGuestPass = false;
   final gymIsOpen = true;
 
   final canEnterGym = (hasMembership || hasGuestPass) && gymIsOpen;
   final needsToBuyMembership = !hasMembership && !hasGuestPass;
-  final cannotVisitGym = !gymIsOpen;
+  final gymIsClosed = !gymIsOpen;
 
   print('Чи можу я зайти у спортзал? $canEnterGym');
   print('Чи потрібно купити абонемент? $needsToBuyMembership');
-  print('Чи спортзал закритий? $cannotVisitGym');
-}
-
-void main() {
-  logicalOperatorsExample();
+  print('Чи спортзал закритий? $gymIsClosed');
 }

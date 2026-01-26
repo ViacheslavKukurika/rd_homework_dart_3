@@ -9,7 +9,9 @@ void main() {
   final needsToBuyMembership = !hasMembership && !hasGuestPass;
   final gymIsClosed = !gymIsOpen;
 
+  print('-----------------------------------');
   print('Чи можу я зайти у спортзал? $canEnterGym');
   print('Чи потрібно купити абонемент? $needsToBuyMembership');
   print('Чи спортзал закритий? $gymIsClosed');
+  print('-----------------------------------');
 }

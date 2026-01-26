@@ -1,5 +1,4 @@
-// 📍 Конструкція switch Statement
-void switchStatementExample() {
+void main() {
   final day = 'середа';
 
   switch (day) {
@@ -7,14 +6,12 @@ void switchStatementExample() {
       print('Початок тижня');
     case 'пʼятниця':
       print('Кінець робочого тижня');
+    // можна ще ось так
+    // case 'субота' || 'неділя':
     case 'субота':
     case 'неділя':
       print('Вихідний');
     default:
       print('Звичайний робочий день');
   }
-}
-
-void main() {
-  switchStatementExample();
 }

@@ -1,5 +1,4 @@
-// 📍 Конструкція switch expression
-void switchExpressionExample() {
+void main() {
   final day = 'понеділок';
 
   final willGoToWork = switch (day) {
@@ -12,8 +11,4 @@ void switchExpressionExample() {
   } else {
     print('Сьогодні не піду на роботу');
   }
-}
-
-void main() {
-  switchExpressionExample();
 }

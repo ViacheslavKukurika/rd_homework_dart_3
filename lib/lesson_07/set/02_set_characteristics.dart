@@ -1,0 +1,16 @@
+// Характеристики множини (немає доступу за індексом, перевірка наявності)
+
+void main() {
+  final numbers = {1, 2, 3, 4, 5};
+
+  //    !!!!!!!
+  // print(numbers[0]);
+
+  // Замість цього можна використовувати first, last або ітерацію
+  print('First element: ${numbers.firstOrNull}');
+  print('Last element: ${numbers.lastOrNull}');
+
+  // Перевірка чи містить множина елемент
+  print('Contains 3: ${numbers.contains(3)}');
+  print('Contains 10: ${numbers.contains(10)}');
+}

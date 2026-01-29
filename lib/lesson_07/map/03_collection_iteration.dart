@@ -1,4 +1,4 @@
-// Ітерація по карті
+// Ітерація по мапі
 
 void main() {
   final scores = {
@@ -29,16 +29,19 @@ void main() {
 
   // Метод forEach для ітерації
   print('Using forEach:');
+
   scores.forEach((key, value) {
     print('$key: $value');
   });
 
-  // Фільтрація елементів
+  // Фільтрація елементів (не має прямого методу where для мап)
+  // Можна використовувати Map.fromEntries
   print('High scores (>90):');
-  final newScores = scores.entries
-      .where((entry) => entry.value > 90)
-      .map((entry) => '${entry.key}: ${entry.value}')
-      .toList();
+  final newScores =
+      Map.fromEntries(scores.entries.where((entry) => entry.value > 90));
+  // aбо модифікувати через removeWhere
+  // final newScores = newScores.removeWhere((key, value) => value < 90);
+
   print('New scores: $newScores');
 
   // Створення нової карти, перебираючи іншу

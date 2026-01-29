@@ -3,8 +3,12 @@
 void main() {
   final numbers = {1, 2, 3, 4, 5};
 
-  //    !!!!!!!
+  // !!!!!!!
   // print(numbers[0]);
+
+  print(numbers.elementAt(2));
+
+  print('First element: ${numbers.elementAt(0)}');
 
   // Замість цього можна використовувати first, last або ітерацію
   print('First element: ${numbers.firstOrNull}');

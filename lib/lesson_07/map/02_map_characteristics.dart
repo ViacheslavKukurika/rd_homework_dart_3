@@ -1,7 +1,12 @@
 // Характеристики карти (доступ за ключем, перевірка наявності)
 
 void main() {
-  final scores = {'Alice': 95, 'Bob': 87, 'Charlie': 92, 'Diana': 88};
+  final scores = {
+    'Alice': 95,
+    'Bob': 87,
+    'Charlie': 92,
+    'Diana': 88,
+  };
 
   // Доступ до значень за ключем
   print('Alice score: ${scores['Alice']}');

@@ -1,50 +1,25 @@
-// Треба розказати студентам, що це за ignore  і для чого він використовується
-// ignore_for_file: prefer_final_locals, omit_local_variable_types
+// Урок 4: Основні типи даних у Dart
+// Матеріал розбито на окремі файли для зручності обговорення
 
-// Основні типи даних у Dart
-// Приклади оголошення змінних усіх базових типів
+import 'package:dart_course/lesson_04/01_primitives.dart' as p1;
+import 'package:dart_course/lesson_04/02_collections.dart' as p2;
+import 'package:dart_course/lesson_04/03_special_types.dart' as p3;
+import 'package:dart_course/lesson_04/04_records.dart' as p4;
+import 'package:dart_course/lesson_04/05_enums.dart' as p5;
 
 void main() {
-  // int — цілі числа
-  int age = 30;
-  print('int: $age');
+  print('=== 1. Примітивні типи ===');
+  p1.primitivesExample();
 
-  // double — числа з плаваючою комою
-  double height = 1.85;
-  print('double: $height');
+  print('\n=== 2. Колекції ===');
+  p2.collectionsExample();
 
-  // String — текстові рядки
-  String name = 'John Doe';
-  print('String: $name');
+  print('\n=== 3. Спеціальні типи (dynamic, var) ===');
+  p3.specialTypesExample();
 
-  // bool — логічні значення
-  bool isActive = true;
-  print('bool: $isActive');
+  print('\n=== 4. Records ===');
+  p4.recordsExample();
 
-  // List — список елементів (може містити дублікати)
-  List<String> colors = ['red', 'green', 'blue'];
-  print('List: $colors');
-
-  // Set — множина унікальних елементів (дублікати автоматично видаляються)
-  // ignore: equal_elements_in_set
-  Set<int> uniqueNumbers = {1, 2, 3, 2, 1};
-  print('Set: $uniqueNumbers');
-
-  // Map — колекція пар "ключ-значення"
-  Map<String, int> productPrices = {
-    'apple': 3,
-    'banana': 2,
-    'orange': 4,
-  };
-  print('Map: $productPrices');
-
-  // dynamic — змінна, яка може змінювати свій тип під час виконання
-  dynamic anything = 'I am a String';
-  print('dynamic: $anything');
-  anything = 123; // тепер int
-  print('dynamic changed: $anything');
-
-  // var — автоматичне визначення типу змінної за початковим значенням
-  var country = 'Ukraine'; // Dart сам визначить, що це String
-  print('var: $country');
+  print('\n=== 5. Enums ===');
+  p5.enumsExample();
 }

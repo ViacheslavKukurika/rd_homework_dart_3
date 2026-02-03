@@ -1,0 +1,15 @@
+// late — відкладена ініціалізація
+// Змінна обов'язково ініціалізується до першого читання (наприклад, у конструкторі)
+late String greeting;
+// late final String greeting;
+
+void lateExample() {
+  print('Greeting: $greeting is not initialized!');
+
+  greeting = 'Hi'; // обов'язково присвоїти до першого читання
+  // greeting = 'Hissss'; // Помилка: змінна не ініціалізована
+
+  print('Greeting: $greeting');
+}
+
+void main() => lateExample();

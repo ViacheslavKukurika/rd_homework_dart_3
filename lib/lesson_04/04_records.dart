@@ -1,0 +1,26 @@
+// Record — незмінна група значень (Dart 3+)
+// Позиційні та іменовані поля, деструктуризація
+
+void recordsExample() {
+  // Record — незмінна група значень (позиційних або іменованих)
+  (String, int) point = ('A', 10); // позиційний
+  ({String name, int age}) person = (name: 'Олег', age: 28); // іменований
+
+  // Позиційний record — варіанти виведення
+  print('Record: $point');
+  print('Record: ${point.$1}, ${point.$2}');
+
+  // Іменований record — варіанти виведення
+  print('Record (named): ${person.name}, ${person.age}');
+  print('Record (named): $person');
+
+  // Деструктуризація — варіанти виведення
+  var (name: userName, age: userAge) = (name: 'Марія', age: 25);
+  print('Destructured: $userName, $userAge');
+
+  var (x, y) = (1, 2);
+  print('Destructured: x=$x, y=$y');
+  print('Destructured: ${x + y}');
+}
+
+void main() => recordsExample();

@@ -4,6 +4,8 @@
 // За замовчуванням змінні non-nullable (не можуть бути null).
 // Тип з ? — nullable: String? може бути String або null.
 
+// ignore_for_file: avoid_init_to_null, omit_local_variable_types, prefer_final_locals, dead_code, lines_longer_than_80_chars
+
 void nullableExample() {
   // Non-nullable — не може бути null
   String name = 'Anna';
@@ -35,7 +37,7 @@ void nullableExample() {
   // Оператор ! — примусове розпакування (тільки якщо впевнений що не null)
   String? sure = 'Definitely';
 
-  String unwrapped = sure!; // OK — sure не null
+  String unwrapped = sure; // OK — sure не null "!"
   print('unwrapped: $unwrapped');
 
   // ??= — присвоїти тільки якщо поточна змінна null

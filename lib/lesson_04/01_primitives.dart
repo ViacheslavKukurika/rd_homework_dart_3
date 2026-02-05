@@ -1,6 +1,8 @@
 // Примітивні типи даних у Dart
 // int, double, String, bool
 
+// ignore_for_file: omit_local_variable_types, prefer_final_locals, noop_primitive_operations, lines_longer_than_80_chars
+
 void primitivesExample() {
   // int — цілі числа
   int age = 30;
@@ -13,7 +15,7 @@ void primitivesExample() {
 
   // Варіанти виведення int
   print('int: $age');
-  print('int: ${age}');
+  print('int: $age');
   print('int: ${age.toString()}');
   print('int: ${age + 0}'); // вираз у ${}
 

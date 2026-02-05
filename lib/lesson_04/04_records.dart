@@ -1,3 +1,5 @@
+// ignore_for_file: omit_local_variable_types, prefer_final_locals
+
 // Record — незмінна група значень (Dart 3+)
 // Позиційні та іменовані поля, деструктуризація
 
@@ -15,10 +17,10 @@ void recordsExample() {
   print('Record (named): $person');
 
   // Деструктуризація — варіанти виведення
-  var (name: userName, age: userAge) = (name: 'Марія', age: 25);
+  final (name: userName, age: userAge) = (name: 'Марія', age: 25);
   print('Destructured: $userName, $userAge');
 
-  var (x, y) = (1, 2);
+  final (x, y) = (1, 2);
   print('Destructured: x=$x, y=$y');
   print('Destructured: ${x + y}');
 }

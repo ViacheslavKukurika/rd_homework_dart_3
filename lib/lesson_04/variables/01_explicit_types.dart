@@ -1,3 +1,6 @@
+// ignore: lines_longer_than_80_chars
+// ignore_for_file: omit_local_variable_types, prefer_final_locals, prefer_function_declarations_over_variables, inference_failure_on_function_return_type
+
 // Явне оголошення типу змінної
 // Тип вказується явно — краща читабельність, перевірка на етапі компіляції
 

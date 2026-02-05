@@ -1,5 +1,7 @@
 // late — відкладена ініціалізація
 // Змінна обов'язково ініціалізується до першого читання (наприклад, у конструкторі)
+// ignore_for_file: lines_longer_than_80_chars
+
 late String greeting;
 // late final String greeting;
 

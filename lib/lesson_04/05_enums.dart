@@ -1,5 +1,7 @@
+// ignore_for_file: noop_primitive_operations
+
 // Enum — перелік фіксованих значень
-// Простий enum та enhanced enum (Dart 3+)
+// Простий enum та enhanced enum
 
 // Простий enum
 enum Status { inactive, loading, success, error }
@@ -16,13 +18,12 @@ enum AppColor {
 
 void enumsExample() {
   // Enum — перелік фіксованих значень
-  var status = Status.inactive;
+  final status = Status.inactive;
   // Enhanced enum — з методами та властивостями
-  var color = AppColor.primary;
+  final color = AppColor.primary;
 
   // Enum — варіанти виведення
   print('Enum: $status');
-  print('Enum: ${status}');
   print('Enum: ${status.name}');
   print('Enum: ${status.index}');
   print('Enum: ${status.toString()}');
@@ -31,7 +32,7 @@ void enumsExample() {
   print('Enhanced enum: ${color.hex}');
   print('Enhanced enum: $color');
   print('Enhanced enum: ${color.name}');
-  for (var c in AppColor.values) {
+  for (final c in AppColor.values) {
     print('  ${c.name}: ${c.hex}');
   }
 }

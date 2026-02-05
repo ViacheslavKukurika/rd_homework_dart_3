@@ -6,12 +6,14 @@ analyzer:
     strict-inference: true
     strict-raw-types: true
   errors:
+    cascade_invocations: ignore
     file_names: ignore
     inference_failure_on_collection_literal: ignore
     invalid_annotation_target: ignore
     missing_required_param: error
     missing_return: error
     record_literal_one_positional_no_trailing_comma: error
+    unawaited_futures: ignore
     unreachable_from_main: ignore
     unused_local_variable: ignore
     use_is_even_rather_than_modulo: ignore

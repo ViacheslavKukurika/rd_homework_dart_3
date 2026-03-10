@@ -5,7 +5,7 @@
 
 void recordsExample() {
   // Record — незмінна група значень (позиційних або іменованих)
-  (String, int) point = ('A', 10); // позиційний
+  (String, int) point = ('Олег', 28); // позиційний
   ({String name, int age}) person = (name: 'Олег', age: 28); // іменований
 
   // Позиційний record — варіанти виведення

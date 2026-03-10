@@ -6,16 +6,8 @@
 void collectionsExample() {
   // List — список елементів (може містити дублікати)
   List<String> colors = ['red', 'green', 'blue'];
-  // Set — множина унікальних елементів (дублікати автоматично видаляються)
-  Set<int> uniqueNumbers = {1, 2, 3, 2, 1};
-  // Map — колекція пар "ключ-значення"
-  Map<String, int> productPrices = {
-    'apple': 3,
-    'banana': 2,
-    'orange': 4,
-  };
 
-  // List — варіанти виведення
+// List — варіанти виведення
   print('List: $colors');
   print('List: ${colors.toString()}');
   print('List join: ${colors.join(', ')}');
@@ -24,6 +16,8 @@ void collectionsExample() {
   }
   colors.forEach((final c) => print('  forEach: $c'));
 
+  // Set — множина унікальних елементів (дублікати автоматично видаляються)
+  Set<int> uniqueNumbers = {1, 2, 3, 2, 1};
   // Set — варіанти виведення, доступ по індексу
   print('Set: $uniqueNumbers');
   print('Set elementAt(0): ${uniqueNumbers.elementAt(0)}');
@@ -32,7 +26,12 @@ void collectionsExample() {
   for (final n in uniqueNumbers) {
     print('  - $n');
   }
-
+  // Map — колекція пар "ключ-значення"
+  Map<String, int> productPrices = {
+    'apple': 3,
+    'banana': 2,
+    'orange': 4,
+  };
   // Map — варіанти виведення, доступ по індексу (keys/values/entries)
   // Map не має прямого доступу по індексу — доступ лише по ключу
   print('Map: $productPrices');

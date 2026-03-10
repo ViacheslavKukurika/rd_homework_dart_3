@@ -8,8 +8,9 @@
 
 void nullableExample() {
   // Non-nullable — не може бути null
-  String name = 'Anna';
+  String name;
   // name = null; // Помилка: String не приймає null
+  // print('name: $name');
 
   // Nullable — може бути null
   String? nickname;

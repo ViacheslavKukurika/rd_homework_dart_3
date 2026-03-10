@@ -7,14 +7,13 @@ void primitivesExample() {
   // int — цілі числа
   int age = 30;
   // double — числа з плаваючою комою
-  double height = 1.85;
+  double height = 1.859;
   // String — текстові рядки
   String name = 'John Doe';
   // bool — логічні значення
   bool isActive = true;
 
   // Варіанти виведення int
-  print('int: $age');
   print('int: $age');
   print('int: ${age.toString()}');
   print('int: ${age + 0}'); // вираз у ${}
@@ -31,7 +30,6 @@ void primitivesExample() {
 
   // Варіанти виведення bool
   print('bool: $isActive');
-  print('bool: ${isActive.toString()}');
 }
 
 void main() => primitivesExample();

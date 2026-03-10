@@ -2,7 +2,9 @@
 // Змінна обов'язково ініціалізується до першого читання (наприклад, у конструкторі)
 // ignore_for_file: lines_longer_than_80_chars
 
+// late — змінна, яка буде ініціалізована пізніше і може бути змінена
 late String greeting;
+// late final — змінна, яка буде ініціалізована пізніше і не може бути змінена
 // late final String greeting;
 
 void lateExample() {

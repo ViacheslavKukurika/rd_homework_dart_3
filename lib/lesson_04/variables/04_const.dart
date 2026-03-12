@@ -13,6 +13,20 @@ void constExample() {
   const list = [1, 2, 3];
   const list2 = [1, 2, 3];
   print('list == list2: ${list == list2}');
+
+  const a = A.name;
+  const b = B.name;
+  print('a == b: ${a == b}');
 }
 
 void main() => constExample();
+
+class A {
+  const A();
+  static const String name = 'A';
+}
+
+class B {
+  const B();
+  static const String name = 'A';
+}

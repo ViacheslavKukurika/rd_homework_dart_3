@@ -1,7 +1,7 @@
 // ignore_for_file: noop_primitive_operations, lines_longer_than_80_chars, prefer_final_locals
 
 // Спеціальні типи: dynamic, Object та var
-//  обережно з dynamic
+// обережно з dynamic
 // Object та його основні методи
 
 // Приклад роботи з dynamic

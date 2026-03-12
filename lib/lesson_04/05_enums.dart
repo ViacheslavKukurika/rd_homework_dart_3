@@ -26,7 +26,6 @@ void enumsExample() {
   print('Enum: $status');
   print('Enum: ${status.name}');
   print('Enum: ${status.index}');
-  print('Enum: ${status.toString()}');
 
   // Enhanced enum — варіанти виведення
   print('Enhanced enum: ${color.hex}');

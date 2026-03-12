@@ -32,6 +32,8 @@ void collectionsExample() {
     'banana': 2,
     'orange': 4,
   };
+
+  productPrices.addAll({'pear': 5, 'apple': 3});
   // Map — варіанти виведення, доступ по індексу (keys/values/entries)
   // Map не має прямого доступу по індексу — доступ лише по ключу
   print('Map: $productPrices');

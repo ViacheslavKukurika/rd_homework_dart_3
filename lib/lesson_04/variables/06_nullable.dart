@@ -26,6 +26,11 @@ void nullableExample() {
   String displayName = nickname ?? 'Гість';
   print('displayName: $displayName');
 
+  // ??= — присвоїти тільки якщо поточна змінна null
+  String? optional = null;
+  optional ??= 'default';
+  print('optional: $optional');
+
   // Оператор ?. — безпечний виклик (повертає null якщо об'єкт null)
   String? maybeText;
   int? length = maybeText?.length; // null, не викликає помилку
@@ -40,11 +45,6 @@ void nullableExample() {
 
   String unwrapped = sure; // OK — sure не null "!"
   print('unwrapped: $unwrapped');
-
-  // ??= — присвоїти тільки якщо поточна змінна null
-  String? optional = null;
-  optional ??= 'default';
-  print('optional: $optional');
 }
 
 void main() => nullableExample();

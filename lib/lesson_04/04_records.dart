@@ -1,6 +1,6 @@
 // ignore_for_file: omit_local_variable_types, prefer_final_locals
 
-// Record — незмінна група значень (Dart 3+)
+// Record — незмінна група значень (Dart 3+) tuple
 // Позиційні та іменовані поля, деструктуризація
 
 void recordsExample() {

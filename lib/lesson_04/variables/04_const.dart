@@ -8,6 +8,11 @@ void constExample() {
 
   print('Pi: $pi');
   print('Days in week: $daysInWeek');
+
+  //канонічна рівність
+  const list = [1, 2, 3];
+  const list2 = [1, 2, 3];
+  print('list == list2: ${list == list2}');
 }
 
 void main() => constExample();

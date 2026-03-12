@@ -6,6 +6,11 @@ void finalExample() {
   final now = DateTime.now(); // OK — обчислюється під час виконання
   // country = 'Poland'; // Помилка: не можна змінити значення final
 
+  //рівність значень при final
+  final a = 1;
+  final b = 1;
+  print(a == b);
+
   print('Country: $country');
   print('Now: $now');
 }

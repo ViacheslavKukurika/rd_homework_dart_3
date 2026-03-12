@@ -1,11 +1,8 @@
 // ignore_for_file: noop_primitive_operations, lines_longer_than_80_chars, prefer_final_locals
 
-// Спеціальні типи: dynamic та var
-// Коли використовувати та чому обережно з dynamic
-
 // Спеціальні типи: dynamic, Object та var
-// Коли використовувати та чому обережно з dynamic
-// Також розглянемо базовий тип Object та його основні методи
+//  обережно з dynamic
+// Object та його основні методи
 
 // Приклад роботи з dynamic
 void dynamicExample() {

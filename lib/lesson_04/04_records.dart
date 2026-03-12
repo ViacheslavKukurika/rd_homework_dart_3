@@ -6,7 +6,8 @@
 void recordsExample() {
   // Record — незмінна група значень (позиційних або іменованих)
   (String, int) point = ('Олег', 28); // позиційний
-  ({String name, int age}) person = (name: 'Олег', age: 28); // іменований
+  ({String city, String name, int age}) person =
+      (city: 'Київ', name: 'Олег', age: 28); // іменований
 
   // Позиційний record — варіанти виведення
   print('Record: $point');
@@ -23,6 +24,13 @@ void recordsExample() {
   final (x, y) = (1, 2);
   print('Destructured: x=$x, y=$y');
   print('Destructured: ${x + y}');
+
+  print('Destructured: $userName, $userAge');
+
+  //wildcard pattern
+  final (city: _, name: _, :age) = person;
+  var [a, _, _, d] = [1, 2, 3, 4]; // (ігнорує 2 and 3).
+  var [c, b, ...rest] = [1, 2, 3, 4, 5]; //(c=1, b=2, rest=).
 }
 
 void main() => recordsExample();

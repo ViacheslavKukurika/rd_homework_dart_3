@@ -36,7 +36,24 @@ void primitives() {
 /// 2. Set — 3 унікальні оцінки, спробуй створити перевір print-ми,
 ///  що вони не виводяться
 /// 3. Map — 3 предмети та їх оцінки
-void collections() {}
+
+void collections() {
+  final myFavoriteColors = ['Green', 'Blue', 'Black'];
+  final uniqAssessment = {3, 1, 2};
+  final subAssessment = {
+    'Dart': 5,
+    'Flutter': 5, 
+    'Основи ООП': 5,
+  };
+  print('''
+Мої улюблені кольори: $myFavoriteColors.
+Три випадкові унікальні оцінки: $uniqAssessment.
+3 пари "предмет - оцінка": $subAssessment.
+''');
+
+/*Примітка: я використав повторювані числа у Set і помітив, що в консоль
+ виводиться лише 1. Потім видалив зі списку, щоб лінтер не сварився.*/
+}
 
 /// Завдання 3: var, final, const
 /// 1. Створи змінну через var — наприклад, місто проживання та

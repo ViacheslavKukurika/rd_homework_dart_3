@@ -60,7 +60,20 @@ void collections() {
 ///  зміни її декілька разів (print після кожної зміни)
 /// 2. Створи змінну через final — наприклад, країна
 /// 3. Створи змінну через const — наприклад, кількість днів у тижні
-void varFinalConst() {}
+
+void varFinalConst() {  
+  var cityOfResidence = 'Cherkaasy';
+  print(cityOfResidence);
+  cityOfResidence = 'Kyiv';
+  print(cityOfResidence);
+  cityOfResidence = 'Odesa';
+  print(cityOfResidence);
+
+  final country = 'Ukraine';
+  const daysOfTheWeek = 7;
+  print(country);
+  print(daysOfTheWeek);
+}
 
 /// Завдання 4: Record
 /// Створи іменований та не іменований (позиційний) record з твоїм

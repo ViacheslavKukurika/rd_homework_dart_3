@@ -17,6 +17,9 @@ void main() {
 final studentOrNot = isStudent ? 'так' : 'ні';
 final isStudent = false;
 
+/*Переніс сюди змінні, щоб лінтер не матюкався. Вони пов'язані, 
+тож довелося переносити обидві. Спочатку вони були у тілі функції */
+
 void primitives() {
   final age = 28;
   final height = 1.71;
@@ -52,7 +55,7 @@ void collections() {
 ''');
 
 /*Примітка: я використав повторювані числа у Set і помітив, що в консоль
- виводиться лише 1. Потім видалив зі списку, щоб лінтер не сварився.*/
+ виводиться лише 1 з них. Потім видалив зі списку, щоб лінтер не сварився.*/
 }
 
 /// Завдання 3: var, final, const
@@ -63,16 +66,16 @@ void collections() {
 
 void varFinalConst() {
   var cityOfResidence = 'Cherkaasy';
-  print(cityOfResidence);
+  print('Місто 1: $cityOfResidence');
   cityOfResidence = 'Kyiv';
-  print(cityOfResidence);
+  print('Місто 2: $cityOfResidence');
   cityOfResidence = 'Odesa';
-  print(cityOfResidence);
+  print('Місто 3: $cityOfResidence');
 
   final country = 'Ukraine';
   const daysOfTheWeek = 7;
-  print(country);
-  print(daysOfTheWeek);
+  print('Країна: $country');
+  print('Кількість днів у тижні: $daysOfTheWeek');
 }
 
 /// Завдання 4: Record
@@ -107,4 +110,8 @@ void record() {
 /// Завдання 5: Nullable (опціонально)
 /// Створи змінну String? nickname — може бути null або ім'я.
 /// Виведи її через ??: якщо null — виведи "Немає", інакше — значення.
-void nullable() {}
+
+void nullable() {
+  String? nickname;
+  print(nickname ?? 'Немає');
+}

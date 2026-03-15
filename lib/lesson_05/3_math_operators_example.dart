@@ -27,10 +27,10 @@ void main() {
 
   // Приклади округлення чисел
   final someMoney = 25.5;
-  final rounded = b.round();
-  final ceiled = b.ceil();
-  final floored = b.floor();
-  final formatted = b.toStringAsFixed(2);
+  final rounded = someMoney.round();
+  final ceiled = someMoney.ceil();
+  final floored = someMoney.floor();
+  final formatted = someMoney.toStringAsFixed(2);
 
   // print('-----------------------------------');
   // print('rounded (Звичайне округлення) -  $rounded');

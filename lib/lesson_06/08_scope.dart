@@ -1,13 +1,13 @@
 /// Область видимості — глобальна, локальна, блочна
 
 // Глобальна змінна — доступна всюди в файлі
-int global = 42;
+int _global = 42;
 
 void scopeExample() {
   print('🔍 Область видимості змінних');
 
   final local = 'локальна';
-  print('global=$global, local=$local');
+  print('global=$_global, local=$local');
 
   // Змінні в блоці {} — тільки всередині блоку
   for (var i = 0; i < 2; i++) {
@@ -17,11 +17,11 @@ void scopeExample() {
   // print(inBlock); — помилка, недоступна тут
 
   modifyGlobal();
-  print('global після зміни: $global');
+  print('global після зміни: $_global');
 }
 
 void modifyGlobal() {
-  global++;
+  _global++;
 }
 
 void main() => scopeExample();

@@ -13,6 +13,22 @@
 /// | ({a = 1, b = 2})       | іменовані з дефолтом            | f() / f(a: 3) / f(b: 4)            |
 /// | (a, b, [c?, d?])       | позиц. обовʼязкові + опціон.    | f(1, 2) / f(1, 2, 3)               |
 /// | (a, b, {c?, d?})       | позиц. обовʼязкові + іменов.    | f(1, 2) / f(1, 2, c: 3)            |
+///
+int multiply(int a, int b) {
+  return a * b;
+}
+
+String getGreeting() {
+  return 'Доброго дня!';
+}
+
+void sayHello() {
+  print('Привіт !');
+}
+
+void sayHelloTo(String name) {
+  print('Привіт, $name!');
+}
 
 void functionBasicsExample() {
   print('🔧 Основи функцій');
@@ -30,10 +46,5 @@ void functionBasicsExample() {
   final greeting = getGreeting();
   print(greeting);
 }
-
-void sayHello() => print('Привіт!');
-void sayHelloTo(String name) => print('Привіт, $name!');
-int multiply(int a, int b) => a * b;
-String getGreeting() => 'Доброго дня!';
 
 void main() => functionBasicsExample();

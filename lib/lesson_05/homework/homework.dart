@@ -1,4 +1,6 @@
 
+import 'dart:math';
+
 void main() {
   task1();
   task2();
@@ -74,7 +76,21 @@ void task2() {
 /// Чи можна зробити покупку (якщо є гроші і магазин відкритий).
 /// Чи потрібно почекати (якщо магазин закритий або немає грошей).
 /// Використайте оператори &&, ||, !.
-void task3() {}
+
+void task3() {
+  final hasMoney = Random().nextBool();
+  final isStoreOpen = Random().nextBool();
+
+  final isCanBuy = hasMoney && isStoreOpen;
+  final isNeedWait = !hasMoney || !isStoreOpen;
+
+  print('''
+Чи можемо ми зараз щось купити в магазині: $isCanBuy;
+Чи потрібно нам зачекати із покупкою: $isNeedWait;
+ ''');
+  print('-----------------Завдання 4-----------------');
+}
+
 
 /// Завдання 4: Тернарний оператор
 /// Створіть змінну temperature.

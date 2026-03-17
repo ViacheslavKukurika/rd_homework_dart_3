@@ -1,3 +1,5 @@
+import 'dart:math';
+
 void main() {
   task1();
   task2();
@@ -21,7 +23,7 @@ void main() {
 void task1() {
   const width = 18.4;
   const height = 30.9;
-  
+
   const perimeter = (width + height) * 2;
   const area = width * height;
   final numberOfSquares = width.floor() * height.floor();
@@ -31,6 +33,7 @@ void task1() {
 Площа нашого прямокутника становить: $area см²;
 К-ть квадратів (1х1 см), які поміщаються в наш
 прямокутник складає: $numberOfSquares''');
+  print('-----------------Завдання 2-----------------');
 }
 
 /// Завдання 2: Оператори порівняння
@@ -47,13 +50,14 @@ void task2() {
 
   final isGreaterThan50 = number > 50;
   final isLessThan100 = number < 100;
-  final isMultipleOf5 = number % 5 == 0;
+  final isDivisibleBy5 = number % 5 == 0;
 
   print('''
 Чи більше наше число за 50: $isGreaterThan50;
 Чи менше число за 100: $isLessThan100;
-Чи ділиться число на 5 без залишку: $isMultipleOf5;
+Чи ділиться число на 5 без залишку: $isDivisibleBy5;
 ''');
+  print('-----------------Завдання 3-----------------');
 }
 
 /// Завдання 3: Логічні оператори
@@ -63,7 +67,20 @@ void task2() {
 /// Чи можна зробити покупку (якщо є гроші і магазин відкритий).
 /// Чи потрібно почекати (якщо магазин закритий або немає грошей).
 /// Використайте оператори &&, ||, !.
-void task3() {}
+
+void task3() {
+  final hasMoney = Random().nextBool();
+  final isStoreOpen = Random().nextBool();
+
+  final isCanBuy = hasMoney && isStoreOpen;
+  final isNeedWait = !hasMoney || !isStoreOpen;
+
+  print('''
+Чи можемо ми зараз щось купити в магазині: $isCanBuy;
+Чи потрібно нам зачекати із покупкою: $isNeedWait;
+ ''');
+  print('-----------------Завдання 4-----------------');
+}
 
 /// Завдання 4: Тернарний оператор
 /// Створіть змінну temperature.
@@ -74,7 +91,17 @@ void task3() {}
 /// Потім створіть ще один тернарний оператор:
 /// Якщо менше 10 — вивести “Дуже холодно”.
 
-void task4() {}
+void task4() {
+  const temperature = 10;
+
+  print(
+    temperature > 25
+        ? 'Тепло'
+        : temperature < 10
+            ? 'Дуже холодно'
+            : 'Прохолодно',
+  );
+}
 
 /// Завдання 5: Оператори присвоєння
 /// Використовувати тільки оператори присвоєння (+=, -=, *=, /=)

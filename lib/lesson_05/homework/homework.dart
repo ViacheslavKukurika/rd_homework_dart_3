@@ -41,7 +41,20 @@ void task1() {
 /// Чи менше число за 100.
 /// Чи ділиться число на 5 без залишку.
 /// Виведіть всі результати.
-void task2() {}
+
+void task2() {
+  const number = 17;
+
+  final isGreaterThan50 = number > 50;
+  final isLessThan100 = number < 100;
+  final isMultipleOf5 = number % 5 == 0;
+
+  print('''
+Чи більше наше число за 50: $isGreaterThan50;
+Чи менше число за 100: $isLessThan100;
+Чи ділиться число на 5 без залишку: $isMultipleOf5;
+''');
+}
 
 /// Завдання 3: Логічні оператори
 /// Створіть змінні hasMoney і isStoreOpen (типу bool).

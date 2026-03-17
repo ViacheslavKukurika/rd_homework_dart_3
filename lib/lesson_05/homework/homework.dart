@@ -101,6 +101,7 @@ void task4() {
             ? 'Дуже холодно'
             : 'Прохолодно',
   );
+  print('-----------------Завдання 5-----------------');
 }
 
 /// Завдання 5: Оператори присвоєння
@@ -119,7 +120,19 @@ void task4() {
 /// Поділіть бали на кількість запитань.
 /// Виведіть остаточний результат.
 
-void task5() {}
+void task5() {
+  double score = 0;
+  const correctAnswers = 17;
+  const mistakes = 3;
+  const totalQuestions = 20;
+
+  score += correctAnswers * 10;
+  score -= mistakes * 5;
+  score *= 2;
+  score /= totalQuestions;
+  print('Після усіх операцій наша змінна = $score');
+  print('-----------------Завдання 6-----------------');
+}
 
 /// Завдання 6: Умовні конструкції if/else
 /// Створіть змінну examScore з значенням 56

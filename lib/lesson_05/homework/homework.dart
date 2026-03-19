@@ -271,11 +271,8 @@ void task9() {
 
 void task10() {
   for (var i = 1; i < 21; i++) {
-    if (i > 15) {
-      break;
-    } else if (i % 3 == 0) {
-      continue;
-    }
+    if (i > 15)  break;
+    if (i % 3 == 0)  continue;
     print(i);
   }
 }

@@ -12,8 +12,8 @@ import 'package:dart_course/lesson_06/09_error_handling.dart' as p12;
 
 void main() {
   p1.functionBasicsExample();
-  p4.positionalOptionalExample();
-  p5.namedOptionalExample();
+  p4.positionalRequiredExample();
+  p5.namedRequiredExample();
   p6.mixedParametersExample();
   p7.defaultValuesExample();
   p8.returnValuesExample();

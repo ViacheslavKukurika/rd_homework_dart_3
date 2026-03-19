@@ -14,12 +14,13 @@
 /// | (a, b, [c?, d?])       | позиц. обовʼязкові + опціон.    | f(1, 2) / f(1, 2, 3)               |
 /// | (a, b, {c?, d?})       | позиц. обовʼязкові + іменов.    | f(1, 2) / f(1, 2, c: 3)            |
 ///
-int multiply(int a, int b) {
-  return a * b;
-}
 
 String getGreeting() {
   return 'Доброго дня!';
+}
+
+int multiply(int a, int b) {
+  return a * b;
 }
 
 void sayHello() {

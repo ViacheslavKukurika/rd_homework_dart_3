@@ -39,6 +39,12 @@ class HeroFull {
 /// Спрощена версія — syntactic sugar (синтаксичний цукор)
 /// Dart автоматично присвоює параметри полям через "this."
 /// Результат ідентичний HeroFull, але коду значно менше
+///
+///
+/// Якщо поля класу є публічними та мають ті самі імена, що й вхідні параметри,
+/// Dart дозволяє скоротити запис: Person(this.name, this.age)
+///
+///required, nullable, default values
 class HeroSugar {
   HeroSugar({
     required this.name,
@@ -68,8 +74,9 @@ void classBasicsExample() {
     gender: 'man',
     skinColor: 'white',
     height: 1.90,
-    weapon: 'sword',
+    weapon: 'gun',
   );
+
   hero1.run();
 
   print('\n🍬 Спрощена версія (syntactic sugar):');
@@ -78,7 +85,7 @@ void classBasicsExample() {
     gender: 'woman',
     skinColor: 'black',
     height: 1.75,
-    weapon: 'bow',
+    weapon: 'knife',
   );
   hero2.run();
 }

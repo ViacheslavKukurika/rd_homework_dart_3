@@ -1,4 +1,4 @@
-import 'package:dart_course/lesson_09/OOP/polymorphism/polymorphism.dart';
+import 'package:dart_course/lesson_09/OOP/04_polymorphism/polymorphism.dart';
 
 void main() {
   final circle = Circle(radius: 5);

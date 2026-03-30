@@ -1,4 +1,4 @@
-import 'package:dart_course/lesson_09/OOP/inheritance/inheritance.dart';
+import 'package:dart_course/lesson_09/OOP/02_inheritance/inheritance.dart';
 
 void main() {
   final warrior = Warrior(

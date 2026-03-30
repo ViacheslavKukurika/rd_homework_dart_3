@@ -1,4 +1,4 @@
-import 'package:dart_course/lesson_09/OOP/encapsulation/encapsulation.dart';
+import 'package:dart_course/lesson_09/OOP/01_encapsulation/encapsulation.dart';
 
 void main() {
   // Повний доступ до всіх полів — небезпечно

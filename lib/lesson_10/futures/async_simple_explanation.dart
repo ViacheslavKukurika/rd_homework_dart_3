@@ -1,6 +1,9 @@
 void main() async {
   print('----------------Початок програми----------------\n');
 
+  final result = await fetchData();
+  print(result);
+
   print('\n----------------Кінець програми----------------\n');
 }
 

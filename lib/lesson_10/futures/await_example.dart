@@ -6,18 +6,16 @@ Future<void> main() async {
 
   Future.delayed(
     const Duration(seconds: 2),
-    () => print('Асинхронний код 1'),
+    () => print('Асинхронний код 1 через 2 секунди'),
   );
-
-  additionalMethod();
 
   print('Синхронний код 2');
 
-  //print('Синхронний код 3: fibonacci: ${fibonacci(45)}');
+  // print('Синхронний код 3: fibonacci: ${fibonacci(45)}');
 
-  await Future.delayed(
+  Future.delayed(
     const Duration(seconds: 4),
-    () => print('Асинхронний код 2'),
+    () => print('Асинхронний код 2 через 4 секунди'),
   );
 
   print('Синхронний код 4');
@@ -31,10 +29,10 @@ int fibonacci(int n) {
 }
 
 // додаткова асинхронна операція
-Future<void> additionalMethod() async {
-  print('[fetchData]: start');
-  await Future<void>.delayed(const Duration(seconds: 1));
-  print('[fetchData]: after first delay');
-  await Future<void>.delayed(const Duration(seconds: 1));
-  print('[fetchData]: end');
-}
+// Future<void> additionalMethod() async {
+//   print('[fetchData]: start');
+//   await Future<void>.delayed(const Duration(seconds: 1));
+//   print('[fetchData]: after first delay');
+//   await Future<void>.delayed(const Duration(seconds: 1));
+//   print('[fetchData]: end');
+// }

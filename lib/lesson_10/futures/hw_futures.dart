@@ -22,6 +22,21 @@ void main() async {
   print('Отримано: "$fetchedName", "$fetchedAge". Час виконання: $elapsed');
 
   print('---------------Завдання 4---------------');
+
+  stopwatch.reset();
+  stopwatch.start();
+
+  // Тут згадав про деструктуризацію
+
+  final [parallelName, parallelAge] = await Future.wait([
+    fetchName(),
+    fetchAge(),
+  ]);
+  stopwatch.stop();
+  final elapsed2 = stopwatch.elapsed;
+  print('Отримано: "$parallelName", "$parallelAge". Час виконання: $elapsed2');
+
+  print('---------------Завдання 5---------------');
 }
 
 Future<String> fetchName() async {

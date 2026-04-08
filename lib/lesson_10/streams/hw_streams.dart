@@ -38,4 +38,13 @@ void main() async {
   await subscription.cancel();
 
   print('---------------Завдання 7---------------');
+
+  final periodicStream = Stream.periodic(
+    const Duration(seconds: 1),
+    (e) => e + 1,
+  ).take(10);
+
+  await for (final number in periodicStream) {
+    print('$number...');
+  }
 }

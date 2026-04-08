@@ -8,8 +8,20 @@ void main() async {
 
   final age = await fetchAge();
   final word = getWord(int.parse(age));
-  
+
   print('Мені $age $word');
+
+  print('---------------Завдання 3---------------');
+
+  final stopwatch = Stopwatch();
+  stopwatch.start();
+  final fetchedName = await fetchName();
+  final fetchedAge = await fetchAge();
+  stopwatch.stop();
+  final elapsed = stopwatch.elapsed;
+  print('Отримано: "$fetchedName", "$fetchedAge". Час виконання: $elapsed');
+
+  print('---------------Завдання 4---------------');
 }
 
 Future<String> fetchName() async {
@@ -25,7 +37,7 @@ Future<String> fetchAge() async {
 String getWord(int age) {
   return switch ((age % 100, age % 10)) {
     (>= 11 && <= 14, _) => 'років',
-    (_, 1) => 'рік',    
+    (_, 1) => 'рік',
     (_, 2 || 3 || 4) => 'роки',
     _ => 'років',
   };

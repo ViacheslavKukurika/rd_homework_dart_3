@@ -1,4 +1,4 @@
-// ignore_for_file: lines_longer_than_80_chars, prefer_initializing_formals
+// ignore_for_file: lines_longer_than_80_chars
 
 // Factory конструктор
 //
@@ -17,6 +17,7 @@ class Person {
 
   factory Person.create(String name, int age) {
     print('Factory constructor called');
+
     // Тут можна додати логіку перед створенням обʼєкта
     return Person(name, age);
   }
@@ -37,4 +38,8 @@ void main() {
   print('\n=== Factory конструктор ===');
   final person2 = Person.create('Anna', 25);
   person2.sayHello();
+}
+
+class GoodPerson extends Person {
+  GoodPerson(super.name, super.age);
 }

@@ -6,6 +6,7 @@ void main() async {
   controller.stream.listen((value) => print('controller: $value'));
 
   controller.add(10);
+  await Future<void>.delayed(Duration(milliseconds: 500));
   controller.add(20);
 
   await Future<void>.delayed(Duration(milliseconds: 500));

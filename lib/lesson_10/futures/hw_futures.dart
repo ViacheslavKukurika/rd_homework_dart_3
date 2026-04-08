@@ -37,6 +37,9 @@ void main() async {
   print('Отримано: "$parallelName", "$parallelAge". Час виконання: $elapsed2');
 
   print('---------------Завдання 5---------------');
+
+ final message = await delayedCountdown(5);
+ print(message);  
 }
 
 Future<String> fetchName() async {
@@ -56,4 +59,12 @@ String getWord(int age) {
     (_, 2 || 3 || 4) => 'роки',
     _ => 'років',
   };
+}
+
+Future<String> delayedCountdown(int seconds) async {
+  for (var i = seconds; i >= 1; i--) {
+    print('$i...');
+    await Future<void>.delayed(const Duration(seconds: 1));
+  }
+  return 'Старт!';
 }

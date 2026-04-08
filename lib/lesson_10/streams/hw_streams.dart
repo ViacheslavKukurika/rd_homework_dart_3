@@ -1,3 +1,5 @@
+import 'dart:async';
+
 void main() async {
   print('---------------Завдання 6---------------');
 
@@ -47,4 +49,23 @@ void main() async {
   await for (final number in periodicStream) {
     print('$number...');
   }
+
+  print('---------------Завдання 8---------------');
+
+  final controllerStream = StreamController<String>();
+
+  controllerStream.stream.listen(
+    (value) {
+      print('controller: $value');
+    },
+    onDone: () {
+      print('Стрім завершено');
+    },
+  );
+
+  controllerStream.add('Hello');
+  controllerStream.add('Dart');
+  controllerStream.add('and Flutter');
+
+  await controllerStream.close();
 }
